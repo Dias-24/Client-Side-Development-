@@ -1,0 +1,18 @@
+<script>
+    function countvowels(str) {
+    let count = 0;
+    
+    for (let char of str) {
+        if (/[aeiou]/i.test(char)) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
+// Example usage:
+let text = "Education";
+console.log(countvowels(text)); // Output: 5
+
+</script>

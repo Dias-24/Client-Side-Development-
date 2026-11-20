@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe Button</title>
+
+
+  <style>
+  * { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 20%, #3a0a0a, #0d0d0d 70%);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+             
+    .sub-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(180deg, #ff3b3b, #d90000);
+      box-shadow: 0 6px 18px rgba(255, 0, 0, 0.45);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .sub-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 0, 0, 0.55);
+    }
+
+    .sub-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* this class is added by JavaScript when the user subscribes */
+    .subscribed {
+      color: #222;
+      background: linear-gradient(180deg, #ffffff, #d9d9d9);
+      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
+    }
+
+    /* text colour changes when the cursor is on the Subscribe text */
+    #label:hover {
+      color: #2b250cae;
+    }
+
+    /* on the white subscribed button, the text turns red instead */
+    .subscribed #label:hover {
+      color: #d90000;
+    }
+
+    /* bell is hidden until subscribed */
+    #bell {
+      display: none;
+    }
+
+    .subscribed #bell {
+      display: inline;
+      animation: ring 0.6s;
+    }
+
+    @keyframes ring {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(18deg); }
+      50%  { transform: rotate(-16deg); }
+      75%  { transform: rotate(8deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <button class="sub-btn" id="subBtn">
+      <span id="icon">▶</span>
+      <span id="label">Subscribe</span>
+      <span id="bell">🔔</span>
+    </button>
+
+    <div style="color: #bbb; font-size: 13px; letter-spacing: 1px;">
+      Click the button
+    </div>
+
+  </div>
+
+  <script>
+    var button = document.getElementById("subBtn");
+    var icon = document.getElementById("icon");
+    var label = document.getElementById("label");
+
+    button.addEventListener("click", function () {
+      
+      button.classList.toggle("subscribed");
+
+  
+      if (button.classList.contains("subscribed")) {
+        label.textContent = "Subscribed";
+        icon.textContent = "✔";
+      } else {
+        label.textContent = "Subscribe";
+        icon.textContent = "▶";
+      }
+    });
+  </script>
+</body>
+</html>

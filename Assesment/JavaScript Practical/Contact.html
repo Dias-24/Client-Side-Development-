@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Contact Us | Southgate Solutions</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://'/
+        '.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <style>
+            :root {
+              --teal-900:  #063b38;
+              --teal-700:  #0f766e;
+              --teal-500:  #14b8a6;
+              --teal-100:  #ccfbf1;    
+              --amber   :  #f59e0b;
+              --slate-900: #0f172a;
+              --slate-600: #475569;
+              --slate-200: #e2e8f0;
+              --bg       : #f1f5f4;      
+            }
+            body {
+                font-family: "inter",sans-serif;
+                background: var(--bg);
+                color:var(--slate-900);
+            }
+            .navbar {background: #fff;box-shadow: 0 1px 0 var(--slate-200);}
+            .navbar-brand {font-weight: 800;color: var(--teal-900);letter-spacing: -.3px;}
+            .brand-mark {
+                display: inline-grid;place-items: center;
+                width: 36px; height: 36px; border-radius: 10px;
+                background:linear-gradient(135deg, var(--teal-700), var(--teal-500));
+                color: #fff; margin-right: .6rem; font-size: 1.1rem;
+            }
+            .nav-link{color: var(--slate-600);font-weight: 500;}
+            .nav-link:hover,.nav-link.active{color: var(--teal-700);}
+
+            .hero {
+                background: 
+                   radial-gradient(circle at 85% 20%, rgba(20, 184, 166, .35), transparent 40%),
+                   radial-gradient(circle at 10% 90%, rgba(245,158,11,.20),transparent 35%),
+                   linear-gradient(135deg, var(--teal-900),#0b4f4a 60%, var(--teal-700));
+                color: #fff;
+                padding: 5rem 0 9rem;
+                position: relative;
+            }
+            .hero::after{
+                content: "";position: absolute;inset: 0;opacity: .06;
+                background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg,#fff 1px,transparent 1px);
+                background-size: 44px 44px;
+            }
+            .hero.container {position: relative;z-index: 1;}
+            .eyebrow {
+                display: inline-block;font-size: .78rem;font-weight: 600; letter-spacing: 2px;text-transform: uppercase;
+                color: var(--amber);margin-bottom: 1rem;
+            }
+            .heroh1 {font-weight: 800; letter-spacing: -1px;font-size: clamp(2.2rem,5vw,3.4rem);}
+            .herop {color: rgba(255, 255, 255, .75); max-width: 560px;font-size: 1.1rem;}
+
+            .main-section{margin-top: -6rem;position: relative;z-index: 2;}
+            .contact-card{
+                border: 0;border-radius: 20px;overflow: hidden;
+                box-shadow: 0 25px 60px rgba(6, 59, 56, .18);
+            }
+
+            .side{
+                background: #fff;
+                border-right: 1px solid var(--slate-200);
+                padding: 2.5rem 2rem;
+                height: 100%;
+            }
+            .side h4 { font-weight: 700;}
+            .contact-item {display: flex;gap: 1rem;margin-bottom: 1.6rem;}
+            .contact-item .ico {
+                width: 46px; height: 46px; flex-shrink: 0;border-radius: 12px;
+                display: grid;place-items:center;font-size: 1.15rem;
+                background: var(--teal-100);color: var(--teal-700);
+            }
+            .contact-item small{ color: var(--slate-600);display: block;}
+            .contact-item strong{font-weight: 600;}
+
+            .response-box{
+                background: linear-gradient(135deg,var(--teal-700),var(--teal-500));
+                color: #fff; border-radius: 14px;padding: 1.1rem 1.25rem; margin-top: 2rem;
+                display: flex;align-items: center;gap: 0.9rem;
+            }
+            .response-box i {font-size: 1.6rem;color: var(--amber);}
+
+            .form-side{background: #fff;padding: 2.5rem;}
+            .form-side h3 {font-weight: 700;letter-spacing: -.3px;}
+
+            .form-lable { font-weight: 600; font-size: .88rem; color: var(--slate-900);}
+            .input-group-text{
+                background: #f8fafc;border: 1.5px solid  var(--slate-200); border-right: 0;
+                color: var(--teal-700);border-radius: 12px 0 0 12px;
+            } 
+            .form-control{
+                border: 1.5px solid var(--slate-200);border-radius: 12px;padding: .75rem;
+                transition: border-color .2s,box-shadow .2s;background: #f8fafc;
+            }
+            .input-group.form-control{border-left: 0;border-radius: 0 12px 12px 0;}
+                textarea.form-control {border-radius: 12px; resize: none;}
+            .form-control:focus{
+                border-color: var(--teal-500);background: #fff;
+                box-shadow: 0 0 0 .25rem rgba(20, 184, 166, .18);
+            }
+            .input-group:focus-within.input-group-text{border-color: var(--teal-500);background: #fff;}
+
+            .btn-submit{
+                background: linear-gradient(135deg,var(--teal-700),var(--teal-500));
+                border: 0; color: #fff; font-weight: 600;letter-spacing: .3px;
+                padding: .9rem 2rem; border-radius: 12px;
+                box-shadow:0 10px 22px rgba(15,118,110,.3);
+                transition: transform .2s, box-shadow .2s;
+            }
+            .btn-submit:hover { color: #fff;transform: translateY(-2px);box-shadow: 0 14px 28px rgb(15,118,110,.4);}
+            .btn-submit:active{ transform: translateY(0);}
+
+            .output-card { border:0; border-radius: 20px;box-shadow: 0 10px 30px rgba(6,59,56,.1);}
+            .output-head{ display: flex; align-items: center; gap: .7rem;}
+            .output-head.ico{
+                width: 40px ; height : 40px; border-radius: 10px; display: grid;place-items: center;
+                background: #fef3c7;color: #b45309;
+            }
+            #output{
+                background: #f8fafc;border: 1.5px dashed #94a3b8; border-radius: 12px;
+                font-family: 'SFmono-Regular',  Consolas,monospace;font-size: .92rem; color: var(--slate-900);
+                resize:none;
+            }
+
+            footer {color: var(--slate-600);font-size: .88rem;}
+
+            @media(max-width: 767.98px) {
+                .side { border-right: 0; border-bottom: 1px solid var(--slate-200);}
+                .form-side, .side {padding: 1.75rem 1.4rem;}
+            }
+          
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container">
+                <a class=" navbar-brand d-flex align-items-center" href="#">
+                    <span class="brand-mark"><i class="bi bi-hexagon-fill"></i></span>Southgate
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav"> 
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class= "collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto gap-lg-3">
+                       <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                       <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                       <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                       <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <header class="hero">
+        <div class="container">
+            <span class="eyebrow">Contact</span>
+            <h1 class="mb-3">Let's start a conversation</h1>
+            <p class="mb-0">Questions about our services? Our team is ready to help.Send us a message and we'll get back to you promptly</p>
+        </div>
+    </header>
+
+    <main class="container main-section pb-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-11">
+                <div class="card contact-card">
+                    <div class="row g-0">
+
+
+                        <div class="col-lg-4">
+                            <div class="side">
+                                <h4 class="mb-1">Contact information</h4>
+                                <p class="text-secondary mb-4">Reach us through any of the channels below</p>
+
+                                <div class="contact-item">
+                                    <div class="ico"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <div><small>Office</small><strong>12 Victoria Square<br>Belfast BT1 4GQ</strong></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="ico"><i class="bi bi-envelope-fill"></i></div>
+                                    <div><small>Email</small><strong>infor@southgate.com</strong></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="ico"><i class="bi bi-telephone-fill"></i></div>
+                                    <div><small>Phone</small><strong>+44 27 4000 000</strong></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="ico"><i class="bi bi-clock-fill"></i></div>
+                                    <div><small>Working hours</small><strong>Mon -Fri, 9:00 - 17:30</strong></div>
+                                </div>
+
+                                <div class="response-box">
+                                    <i class="bi bi-lighting-charge-fill"></i>
+                                    <div><strong>Fast response</strong><br><small class="opacity-75">Typically within 24 hours</small></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="form-side">
+                                <h3 class="mb-1">Send us a message</h3>
+                                <p class="text-secondary mb-4">Please complete all the fields below</p>
+
+                                <form id="contactform" novalidate>
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                                <input type="text" class="form-control" id="firstName" placeholder="John">
+                                            </div>
+                                        </div>
+                                    
+
+                                        <div class="col-md-6">
+                                           <label for="LastName" class="form-lable">Last Name</label>
+                                           <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                                <input type="text" class="form-control" id="lastName" placeholder="smith">
+                                           </div>
+                                        </div>
+                                    
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email Address </label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                <input type="email" class="form-control" id="email" placeholder="John@gmail.com">
+                                            </div>
+                                        </div>
+                                    
+
+                                        <div class="col-12">
+                                             <label for="subject" class="form-lable">Subject</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                                                <input type="text" class="form-control" id="subject" placeholder="Website">
+                                            </div>
+                                        </div>
+                                    
+
+                                        <div class="col-12">
+                                            <label for="message" class="form-lable">Message</label>
+                                            <textarea class="form-control" id="message" rows="5" placeholder="how can we help you?"></textarea>
+                                        </div>
+                                    
+
+                                        <div class="col-12 d-flex flex-wrap gap-3 align-items-center justify-content-between mt-3">
+                                           <small class="text-secondary"><i class="bi bi-shield-lock me-1"></i>Your details are kept private</small>
+                                           <button type="button" class="btn btn-submit" onclick="submitContact()">
+                                            submit <i class="bi bi-arrow-right ms-2"></i>
+                                           </button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-xl-11">
+                <div class="card output-card">
+                    <div class="card-body p-4">
+                        <div class="output-head mb-3">
+                            <div class="ico"><i class="bi bi-clipboard-check"></i></div>
+                            <div>
+                                <h5 class="mb-0 fw-bold">Submission Summary</h5>
+                                <Small class="text-secondary">Your submitted information will appear here.</Small>
+                            </div>
+                        </div>
+                        <textarea id="output" class="form-control" rows="6" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center pb-4">&copy;2026 Southgate Solutions. All the right reserved</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function submitContact() {
+            var firstName = document.getElementById("firstName").value.trim();
+            var lastName  = document.getElementById("lastName").value.trim();
+            var email     = document.getElementById("email").value.trim();
+            var subject   = document.getElementById("subject").value.trim();
+            var message  = document.getElementById("message").value.trim();
+        
+            // validation if else
+            if (firstName === "" || lastName === "" || email === "" || subject === "" || message ==="") {
+            alert("Please fill in the all the fields.");
+            } else {
+                 var result =
+                "Fist Name:" + firstName + "\n" +
+                 "Last Name:" + lastName + "\n" +
+                "Email:" + email + "\n" +
+                "subject:" + subject + "\n" +
+                "message:" + message;
+
+                 document.getElementById("output").value=result;
+                 alert ("Your message has been submitted successfully!");
+            }
+        }
+    </script>
+    </body> 
+</html>

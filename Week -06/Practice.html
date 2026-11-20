@@ -1,0 +1,68 @@
+
+/*
+ Question -1 check if a string contains a number
+ Task - Write a Javascript function called containNumber()
+ that checks wether a string contains
+ at least one digit
+
+ make sure the function is taking astr as parameter and it 
+return Boolean
+*/ 
+<script>
+
+   function containNumber(str) {
+    return /[0-9]/.test(str)
+    }
+
+    console.log (containNumber([0-9]));
+    
+</script>
+
+ 
+
+/* 
+Questin 2 check if a string contains uppercase
+Task - write a javascript function called has hasuppercase() that checks whether
+a string contains at least one uppecase letter
+
+
+make sure the function is taking a str as a parameter
+and it returns boolean
+*/
+
+<script>
+
+    let text ="hellO WOrlD1234"
+
+    function hasuppercase(str) {
+        return /[A-Z]/.test(str);
+    }
+    console.log(hasuppercase("hell"));
+</script>
+
+/* 
+count the vowels in a string 
+task - wwrite a Javascript function called countvowwels() that counts the number of 
+vowels in 
+
+Example - "Education"
+*/
+
+<script>
+    function countvowels(str) {
+    let count = 0;
+    
+    for (let char of str) {
+        if (/[aeiou]/i.test(char)) {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
+// Example usage:
+let text = "Education";
+console.log(countvowels(text)); // Output: 5
+
+</script>
